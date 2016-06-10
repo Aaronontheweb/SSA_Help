@@ -1,0 +1,7 @@
+﻿To set this up again from scratch:
+* Download Akka .Net via Tools->Nuget Package Manager ->Search Online
+* Download Akka.Remote .Net via Tools->Nuget Package Manager ->Search Online
+* Download Akka.Logger.Serilog .Net via Tools->Nuget Package Manager ->Search Online
+
+
+

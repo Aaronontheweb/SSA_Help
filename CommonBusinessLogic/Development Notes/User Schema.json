@@ -1,0 +1,17 @@
+﻿
+
+ {
+  "id": "d920116a-f43d-4886-9503-21bff895e36f",
+  "CorporateId": "US\\vbhave",
+  "FirstName": "Vinay",
+  "MiddleName":"",
+  "LastName": "Bhave",
+  "FullName": "Vinay Bhave",
+  "Title": "Master Duper",
+  "e-mail": "vbhave@ey.com",
+  "UserPhone": "55-(339)642-2509",
+  "URLToAvatar": "http:\\127.0.0.1\images\users\d920116a-f43d-4886-9503-21bff895e36f.jpg",
+  "DefaultPermissionsEnabled": true,
+  "GlobalRole": "Admin", // or "Power User" or "None"
+  "DefaultRole": "Admin" // or "Power User", "User"
+}

@@ -1,0 +1,38 @@
+﻿[
+  {
+    "RecordType": "Permissions",
+    "ProjectId": null, // null or projectId
+    "EngagmentId": null, // null or engagementId
+    "ClientId": "ClientABC", // Cannot be null
+    "Permissions": [
+      {
+        "UserId": "",
+        "Role": ""
+      },
+      {
+        "UserId": "",
+        "Role": ""
+      },
+      {
+        "UserId": "",
+        "Role": ""
+      },
+      {
+        "UserId": "",
+        "Role": ""
+      },
+      {
+        "UserId": "",
+        "Role": ""
+      },
+      {
+        "UserId": "",
+        "Role": ""
+      },
+      {
+        "UserId": "",
+        "Role": ""
+      }
+    ]
+  }
+]

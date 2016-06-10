@@ -1,0 +1,5 @@
+﻿This class library is used to encapsulate all common business logic that will be used by all Akka actor systems.  The class library project uses the following folder structure:
+* Actors - Folder which contains all actors classes.
+* Development Notes - Folder which contain development notes or documents which are used to clarify the functionality.
+* Messages - POCOs that are used as messages between the Akka actor classes.
+

@@ -1,0 +1,133 @@
+﻿{
+  "id": "d920116a-f43d-4886-9503-21bff895e36f",
+  "CorporateId": "US\\vbhave",
+  "FirstName": "Vinay",
+  "MiddleName": "",
+  "LastName": "Bhave",
+  "FullName": "Vinay Bhave",
+  "Title": "Master Duper",
+  "e-mail": "vbhave@ey.com",
+  "UserPhone": "55-(339)642-2509",
+  "URLToAvatar": "http:\\127.0.0.1\images\users\d920116a-f43d-4886-9503-21bff895e36f.jpg",
+  "DefaultPermissionsEnabled": true,
+  "GlobalRole": "Admin", // or "Power User" or "None"
+  "DefaultRole": "Admin", // or "Power User", "User"
+  "ClientPermissions": { //object of client permissions - this will translate to a dictionary on the server side
+    "ClientId1": { //<- this is the client id
+      "Area": "Client",
+      "SubArea": "Engagement",
+      "Roles": "", // <- this are the roles at the "Area" (client in this case) level for the user. Comma delimited list of roles here for now it will be only one.
+      "EngagmentPermissions": { // this contains the sub-area (engagement in this case)
+        "Engagement1-1": {
+          "Area": "Engagement",
+          "SubArea": "Project",
+          "Roles": "",
+          "Projects": {
+            "P1-1-1": {
+              "Area": "Project",
+              "SubArea": "None",
+              "Roles": ""
+            },
+            "P1-1-2": {
+              "Area": "Project",
+              "SubArea": "None",
+              "Roles": ""
+            } //, etc.
+          }
+        },
+        "Engagement1-2": {
+          "Area": "Engagement",
+          "SubArea": "Project",
+          "Roles": "",
+          "Projects": {
+            "P1-2-1": {
+              "Area": "Project",
+              "SubArea": "None",
+              "Roles": ""
+            },
+            "P1-2-2": {
+              "Area": "Project",
+              "SubArea": "None",
+              "Roles": ""
+            } //, etc.
+          }
+        },
+        "Engagement1-3": {
+          "Area": "Engagement",
+          "SubArea": "Project",
+          "Roles": "",
+          "Projects": {
+            "P1-3-1": {
+              "Area": "Project",
+              "SubArea": "None",
+              "Roles": ""
+            },
+            "P1-3-2": {
+              "Area": "Project",
+              "SubArea": "None",
+              "Roles": ""
+            } //, etc.
+          }
+        }
+      }
+
+    }, //Client 1
+    "ClientId2": { //<- this is the client id
+        "Area": "Client",
+        "SubArea": "Engagement",
+        "Roles": "", // <- this are the roles at the client level for the user. Comma delimited list of roles here for now it will be only one.
+        "EngagmentPermissions": {
+          "Engagement2-1": {
+            "Area": "Engagement",
+            "SubArea": "Project",
+            "Roles": "",
+            "Projects": {              
+              "P2-1-1":{
+                "Area": "Project",
+                "SubArea": "None",
+                "Roles": ""
+              },
+              "P2-1-2":{
+                "Roles": ""
+              }//, etc.
+            }
+          },
+          "Engagement2-2": {
+            "Area": "Engagement",
+            "SubArea": "Project",
+            "Roles": "",
+            "Projects": {              
+              "P2-2-1":{
+                "Area": "Project",
+                "SubArea": "None",
+                "Roles": ""
+              },
+              "P2-2-2":{
+                "Area": "Project",
+                "SubArea": "None",
+                "Roles": ""
+              }//, etc.
+            }
+          },
+          "Engagement2-3": {
+            "Area": "Engagement",
+            "SubArea": "Project",
+            "Roles": "",
+            "Projects": {              
+              "P2-3-1":{
+                "Area": "Project",
+                "SubArea": "None",
+                "Roles": ""
+              },
+              "P2-3-2":{
+                "Area": "Project",
+                "SubArea": "None",
+                "Roles": ""
+              }//, etc.
+            }
+          }
+        }
+
+      }
+  }
+}

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5041A4C-BA78-4ACD-9BF0-222FC334D838}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EY.SSA.CommonBusinessLogic</RootNamespace>
+    <AssemblyName>CommonBusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Akka, Version=1.0.8.24, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.1.0.8\lib\net45\Akka.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Akka.Logger.CommonLogging, Version=1.0.8.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.Logger.CommonLogging.1.0.8\lib\net45\Akka.Logger.CommonLogging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Akka.Logger.NLog, Version=1.0.8.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.Logger.NLog.1.0.8\lib\net45\Akka.Logger.NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Akka.Persistence, Version=1.0.6.17, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.Persistence.1.0.6.17-beta\lib\net45\Akka.Persistence.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Akka.Remote, Version=1.0.8.24, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.Remote.1.0.8\lib\net45\Akka.Remote.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers, Version=2.4.1.555, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.ProtocolBuffers.2.4.1.555\lib\net40\Google.ProtocolBuffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffers.Serialization, Version=2.4.1.555, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.ProtocolBuffers.2.4.1.555\lib\net40\Google.ProtocolBuffers.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Helios, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Helios.2.1.1\lib\net45\Helios.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.2\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\dotnet\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actors\AreaExternaMessageOutgoingProcessor.cs" />
+    <Compile Include="Actors\ClientActor.cs" />
+    <Compile Include="Actors\AreaExternaMessageIncomingProcessor.cs" />
+    <Compile Include="Actors\Interfaces\ClientAkkaMessageToExternalMessageTranslator.cs" />
+    <Compile Include="Actors\Interfaces\ClientExternalMessageToAkkaMessageTranslator.cs" />
+    <Compile Include="Actors\Interfaces\IAkkaMessagetoExternalActionMessageHandler.cs" />
+    <Compile Include="Actors\Interfaces\IExternalActionMessageToAkkaMessageHandler.cs" />
+    <Compile Include="Messages\Commands\ICommandType.cs" />
+    <Compile Include="Messages\Events\SupervisorEventMessageClasses.cs" />
+    <Compile Include="Messages\Requests\ClientRequestMessageClasses.cs" />
+    <Compile Include="Actors\ClientSupervisor.cs" />
+    <Compile Include="Actors\ClientStateAccumulator.cs" />
+    <Compile Include="General\MicroServiceAreas.cs" />
+    <Compile Include="Messages\Actions\HTTPSourcedAction.cs" />
+    <Compile Include="Messages\Commands\ClientListCommandsMessageClasses.cs" />
+    <Compile Include="Messages\Commands\HTTPSourcedCommand.cs" />
+    <Compile Include="Messages\Commands\RemoveHTTPClient.cs" />
+    <Compile Include="Messages\Events\HTTPDestinedStateEvent.cs" />
+    <Compile Include="Messages\Events\HTTPDestinedRequestStateEvent.cs" />
+    <Compile Include="Messages\Events\HTTPDestinedCommandStateEvent.cs" />
+    <Compile Include="Messages\Requests\HTTPSourcedRequestMessageClasses.cs" />
+    <Compile Include="Actors\SupervisorRegistryActor.cs" />
+    <Compile Include="Actors\HTTPSourceBridgeActor.cs" />
+    <Compile Include="Actors\ClientListActor.cs" />
+    <Compile Include="BridgeInterfaces\IHTTPClientInterface.cs" />
+    <Compile Include="Messages\Configuration\SetInactivityFlushSec.cs" />
+    <Compile Include="Messages\Configuration\SetSnapshotTriggerCount.cs" />
+    <Compile Include="Messages\Events\ClientListEventMessages.cs" />
+    <Compile Include="Messages\Events\CommandEventMessages.cs" />
+    <Compile Include="Messages\Configuration\ConfigurationMessage.cs" />
+    <Compile Include="Messages\Events\Subscribed.cs" />
+    <Compile Include="Messages\Events\SubscribedForCommandEvents.cs" />
+    <Compile Include="Messages\Requests\ClientListRequestsMessageClasses.cs" />
+    <Compile Include="Messages\Requests\Request.cs" />
+    <Compile Include="Messages\Requests\SubscrptionRelatedRequestMessageClasses.cs" />
+    <Compile Include="Messages\Requests\SupervisorRequestsMessageClasses.cs" />
+    <Compile Include="Messages\Response\ClientGetListResponseMessages.cs" />
+    <Compile Include="Messages\Response\HTTPDestinedRequestResponse.cs" />
+    <Compile Include="Messages\Response\Response.cs" />
+    <Compile Include="Messages\Response\SupervisorRegistryResponses.cs" />
+    <Compile Include="State\ClientListState.cs" />
+    <Compile Include="State\ClientState.cs" />
+    <Compile Include="General\ColorConsole.cs" />
+    <Compile Include="State\EngagementState.cs" />
+    <Compile Include="State\SimpleState.cs" />
+    <Compile Include="Messages\Commands\ClientCommandsMessageClasses.cs" />
+    <Compile Include="Messages\Commands\Command.cs" />
+    <Compile Include="Messages\Events\ClientEventMessages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State\StateExtensionMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Development Notes\json1.json" />
+    <None Include="Development Notes\Final User.json" />
+    <None Include="Development Notes\PermissionObject - Option 2.json" />
+    <None Include="Development Notes\PermissionObject - Option 1.json" />
+    <None Include="Development Notes\User Schema.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Actors\What goes in here.txt" />
+    <Content Include="Development Notes\How to Setup.txt" />
+    <Content Include="Development Notes\Module description.txt" />
+    <Content Include="Messages\What goes in here.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Messages\General\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
