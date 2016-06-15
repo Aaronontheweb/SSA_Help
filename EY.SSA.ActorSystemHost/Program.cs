@@ -1,7 +1,7 @@
 ﻿using Akka.Actor;
 using NLog;
 using System;
-using Couchbase;
+//using Couchbase;
 using EY.SSA.CommonBusinessLogic;
 
 namespace EY.SSA.ActorSystemHost
@@ -28,7 +28,7 @@ namespace EY.SSA.ActorSystemHost
             ApplicationLogger.Info("Version:" + assembly);
 
             //initialize the ClusterHelper
-            ClusterHelper.Initialize("couchbaseClients/couchbase");
+            //ClusterHelper.Initialize("couchbaseClients/couchbase");
             
             
             // Instantiate the actor system
@@ -58,7 +58,7 @@ namespace EY.SSA.ActorSystemHost
             ApplicationLogger.Info("Host Actor System on {0} is shut down.", System.AppDomain.CurrentDomain.FriendlyName);
 
             // Close the Cluster Helper
-            ClusterHelper.Close();
+            //ClusterHelper.Close();
 
 
         }

@@ -103,10 +103,10 @@ namespace Akka.Persistence.CouchBase.Snapshot
         /// Called after snapshot is saved
         /// </summary>
         /// <param name="metadata"></param>
-        protected override void Saved(SnapshotMetadata metadata) { 
-            //Does not do anything; for now. 
-            // Add loger here?
-        }
+        //protected override void Saved(SnapshotMetadata metadata) { 
+        //    //Does not do anything; for now. 
+        //    // Add loger here?
+        //}
 
         protected override Task DeleteAsync(SnapshotMetadata metadata)
         {
