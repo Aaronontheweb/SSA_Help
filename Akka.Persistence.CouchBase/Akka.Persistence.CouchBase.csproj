@@ -36,13 +36,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Akka, Version=1.0.6.16, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Akka.1.0.6\lib\net45\Akka.dll</HintPath>
+    <Reference Include="Akka, Version=1.0.8.24, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.1.0.8\lib\net45\Akka.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Akka.Persistence, Version=1.0.6.17, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\akka.net\src\core\Akka.Persistence\bin\Debug\Akka.Persistence.dll</HintPath>
+    <Reference Include="Akka.Persistence, Version=1.0.8.25, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Akka.Persistence.1.0.8.25-beta\lib\net45\Akka.Persistence.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Common.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.3.1.0\lib\net40\Common.Logging.dll</HintPath>
