@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using Akka.Actor;
 using Couchbase;
@@ -73,24 +74,24 @@ namespace Akka.Persistence.CouchBase
             // CREATE INDEX idxDocumentType_PersistenceId_SequenceNr on `SSA` (PersistenceId,SequenceNr,DocumentType) USING GSI
             // CREATE INDEX idxDocumentType_PersistenceId on `SSA` (DocumentType,PersistenceId) USING GSI
 
-            //string N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId_SequenceNr'";
-            //var result = JournalCBBucket.Query<dynamic>(N1QLQueryString);
-            //if (result.Rows.Count == 0 && result.Success == true)
-            //{
-            //    N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId_SequenceNr on `" + JournalCBBucket.Name + "` (PersistenceId,SequenceNr,DocumentType) USING GSI";
-            //    result = JournalCBBucket.Query<dynamic>(N1QLQueryString);
-            //    //if (result.Success != true)
-            //    //    Debug.Write("Could not create index:idxDocumentType_PersistenceId_SequenceNr");
-            //}
-            //N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId";
-            //result = JournalCBBucket.Query<dynamic>(N1QLQueryString);
-            //if (result.Rows.Count == 0 && result.Success == true)
-            //{
-            //    N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId on `" + JournalCBBucket.Name + "` (PersistenceId,DocumentType) USING GSI";
-            //    result = JournalCBBucket.Query<dynamic>(N1QLQueryString);
-            //    //if (result.Success != true)
-            //    //    Debug.Write("Could not create index:idxDocumentType_PersistenceId");
-            //}
+            string N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId_SequenceNr'";
+            var result = JournalCBBucket.Query<dynamic>(N1QLQueryString);
+            if (result.Rows.Count == 0 && result.Success == true)
+            {
+                N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId_SequenceNr on `" + JournalCBBucket.Name + "` (PersistenceId,SequenceNr,DocumentType) USING GSI";
+                result = JournalCBBucket.Query<dynamic>(N1QLQueryString);
+                if (result.Success != true)
+                    Debug.Write("Could not create index:idxDocumentType_PersistenceId_SequenceNr");
+            }
+            N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId";
+            result = JournalCBBucket.Query<dynamic>(N1QLQueryString);
+            if (result.Rows.Count == 0 && result.Success == true)
+            {
+                N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId on `" + JournalCBBucket.Name + "` (PersistenceId,DocumentType) USING GSI";
+                result = JournalCBBucket.Query<dynamic>(N1QLQueryString);
+                if (result.Success != true)
+                    Debug.Write("Could not create index:idxDocumentType_PersistenceId");
+            }
 
 
 
@@ -145,33 +146,33 @@ namespace Akka.Persistence.CouchBase
             // CREATE INDEX idxDocumentType_PersistenceId_Timestamp on `SSA` (PersistenceId,Timestamp,DocumentType) USING GSI
             // CREATE INDEX idxDocumentType_PersistenceId on `SSA` (DocumentType,PersistenceId) USING GSI
 
-            //N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId_SequenceNr'";
-            //result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
-            //if (result.Rows.Count == 0 && result.Success == true)
-            //{
-            //    N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId_SequenceNr on `" + SnapShotStoreCBBucket.Name + "` (PersistenceId,SequenceNr,DocumentType) USING GSI";
-            //    result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
-            //    //if (result.Success != true)
-            //    //    Debug.Write("Could not create index:idxDocumentType_PersistenceId_SequenceNr");
-            //}
-            //N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId_Timestamp";
-            //result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
-            //if (result.Rows.Count == 0 && result.Success == true)
-            //{
-            //    N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId_Timestamp on `" + SnapShotStoreCBBucket.Name + "` (PersistenceId,Timestamp,DocumentType) USING GSI";
-            //    result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
-            //    //if (result.Success != true)
-            //    //    Debug.Write("Could not create index:idxDocumentType_PersistenceId_Timestamp");
-            //}
-            //N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId_Timestamp";
-            //result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
-            //if (result.Rows.Count == 0 && result.Success == true)
-            //{
-            //    N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId on `" + SnapShotStoreCBBucket.Name + "` (DocumentType,PersistenceId) USING GSI";
-            //    result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
-            //    //if (result.Success != true)
-            //    //    Debug.Write("Could not create index:idxDocumentType_PersistenceId");
-            //}
+            N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId_SequenceNr'";
+            result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
+            if (result.Rows.Count == 0 && result.Success == true)
+            {
+                N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId_SequenceNr on `" + SnapShotStoreCBBucket.Name + "` (PersistenceId,SequenceNr,DocumentType) USING GSI";
+                result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
+                if (result.Success != true)
+                    Debug.Write("Could not create index:idxDocumentType_PersistenceId_SequenceNr");
+            }
+            N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId_Timestamp";
+            result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
+            if (result.Rows.Count == 0 && result.Success == true)
+            {
+                N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId_Timestamp on `" + SnapShotStoreCBBucket.Name + "` (PersistenceId,Timestamp,DocumentType) USING GSI";
+                result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
+                if (result.Success != true)
+                    Debug.Write("Could not create index:idxDocumentType_PersistenceId_Timestamp");
+            }
+            N1QLQueryString = "SELECT * FROM system:indexes WHERE name = 'idxDocumentType_PersistenceId_Timestamp";
+            result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
+            if (result.Rows.Count == 0 && result.Success == true)
+            {
+                N1QLQueryString = "CREATE INDEX idxDocumentType_PersistenceId on `" + SnapShotStoreCBBucket.Name + "` (DocumentType,PersistenceId) USING GSI";
+                result = SnapShotStoreCBBucket.Query<dynamic>(N1QLQueryString);
+                if (result.Success != true)
+                    Debug.Write("Could not create index:idxDocumentType_PersistenceId");
+            }
         }
 
 
