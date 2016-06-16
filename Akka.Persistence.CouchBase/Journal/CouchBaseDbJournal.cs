@@ -73,7 +73,8 @@ namespace Akka.Persistence.CouchBase.Journal
             var queryTask = _CBBucket.QueryAsync<dynamic>(N1QLQueryRequest);
             long highestSeqNum = 0;
             var result = await queryTask;
-            long.TryParse(result.Rows[0][resultField].ToString(), out highestSeqNum);
+            if(result.Rows.Count > 0)
+                long.TryParse(result.Rows[0][resultField].ToString(), out highestSeqNum);
             return highestSeqNum;
         }
 
@@ -92,6 +93,7 @@ namespace Akka.Persistence.CouchBase.Journal
             {
                 foreach (AtomicWrite m in messages)
                 {
+                    Exception exp = null;
                     IEnumerable<IPersistentRepresentation> messagePayload = m.Payload as IEnumerable<IPersistentRepresentation>;
                     if (messagePayload.ToImmutableArray().Length != 1)
                     {
@@ -109,7 +111,11 @@ namespace Akka.Persistence.CouchBase.Journal
                     }
                     catch (Exception ex)
                     {
-                        exceptions.Add(ex);
+                        exp = ex;
+                    }
+                    finally
+                    {
+                        exceptions.Add(exp);
                     }
                 }
             });

@@ -55,7 +55,7 @@ namespace Akka.Persistence.CouchBase.Snapshot
             Task<IQueryResult<SnapshotEntry>> queryTask = _CBBucket.QueryAsync<SnapshotEntry>(N1QLQueryRequest);
             IQueryResult<SnapshotEntry> result = await queryTask;
             if (result.Rows.Count == 0)
-                throw new Exception("No Snapshots Found");
+                return null;
 
             return ToSelectedSnapshot(result.Rows[0]);
         }
